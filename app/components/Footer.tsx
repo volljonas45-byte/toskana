@@ -4,18 +4,7 @@ import { Logo } from "./Logo";
 export function Footer() {
   return (
     <footer className="relative bg-toskana-ink text-toskana-cream/85 overflow-hidden">
-      {/* Top decorative SVG - toskanische Hügel */}
-      <svg
-        className="absolute top-0 left-0 w-full h-32 -translate-y-px"
-        viewBox="0 0 1440 120"
-        preserveAspectRatio="none"
-        aria-hidden
-      >
-        <path d="M0,80 Q360,20 720,60 T1440,40 L1440,120 L0,120 Z" fill="#2A1A0E" />
-        <path d="M0,100 Q360,60 720,80 T1440,70 L1440,120 L0,120 Z" fill="#3F4A1F" opacity="0.6" />
-      </svg>
-
-      <div className="container mx-auto px-6 lg:px-12 pt-24 pb-12 relative">
+      <div className="container mx-auto px-6 lg:px-12 pt-20 pb-12 relative">
         <div className="grid lg:grid-cols-12 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-4">
