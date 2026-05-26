@@ -7,9 +7,12 @@ export function Logo({ className = "", variant = "dark" }: LogoProps) {
   return (
     <div className={`flex items-center ${className}`}>
       <div
-        className={`relative h-14 w-44 lg:h-16 lg:w-52 transition-all duration-500 ${
-          variant === "light" ? "brightness-0 invert" : ""
-        }`}
+        className="relative h-14 w-44 lg:h-16 lg:w-52 transition-all duration-500"
+        style={
+          variant === "light"
+            ? { filter: "drop-shadow(0 2px 12px rgba(0,0,0,0.55)) drop-shadow(0 1px 3px rgba(0,0,0,0.4))" }
+            : undefined
+        }
       >
         <Image
           src={img.logo}

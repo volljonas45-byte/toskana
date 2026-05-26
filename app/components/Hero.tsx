@@ -26,7 +26,11 @@ export function Hero() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-toskana-ink/40 via-toskana-bark/30 to-toskana-ink/70" />
+        {/* Top vignette - dunkler oben für Logo+Nav-Lesbarkeit */}
+        <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-toskana-ink/75 via-toskana-ink/30 to-transparent" />
+        {/* Base overall darkening for hero text */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-toskana-bark/25 to-toskana-ink/70" />
+        {/* Bottom fade into next section */}
         <div className="absolute inset-0 bg-gradient-to-t from-toskana-cream via-transparent to-transparent" />
       </div>
 
