@@ -44,13 +44,6 @@ export function Hero() {
           className="max-w-4xl"
           style={{ transform: `translateY(${-scrollY * 0.15}px)`, opacity: 1 - scrollY / 600 }}
         >
-          <div className="inline-flex items-center gap-3 mb-8 px-4 py-2 rounded-full backdrop-blur-md bg-toskana-cream/15 border border-toskana-cream/25">
-            <span className="w-2 h-2 rounded-full bg-toskana-honey animate-pulse" />
-            <span className="text-toskana-cream text-xs font-medium tracking-[0.2em] uppercase">
-              Hofladen · Café · Tortenbäckerei
-            </span>
-          </div>
-
           <h1 className="text-toskana-cream text-shadow-warm font-[family-name:var(--font-display)] text-[clamp(3rem,8vw,7.5rem)] leading-[0.95] mb-6">
             Das kleine
             <br />
