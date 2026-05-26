@@ -15,9 +15,15 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="top" className="relative h-screen min-h-[760px] w-full overflow-hidden">
-      {/* Background Image - Toskana-Landschaft */}
-      <div className="absolute inset-0" style={{ transform: `translateY(${scrollY * 0.4}px) scale(${1 + scrollY * 0.0003})` }}>
+    <section
+      id="top"
+      className="relative min-h-[860px] h-screen w-full overflow-hidden flex flex-col"
+    >
+      {/* Background Image */}
+      <div
+        className="absolute inset-0"
+        style={{ transform: `translateY(${scrollY * 0.35}px)` }}
+      >
         <Image
           src={img.cafe.terrasse}
           alt="Café Toskana Terrasse mit Sonnenschirmen und Bauerngarten"
@@ -26,33 +32,35 @@ export function Hero() {
           className="object-cover"
           sizes="100vw"
         />
-        {/* Top vignette - dunkler oben für Logo+Nav-Lesbarkeit */}
-        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-toskana-ink/85 via-toskana-ink/45 to-transparent" />
-        {/* Base overall darkening for hero text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-toskana-bark/25 to-toskana-ink/70" />
-        {/* Bottom fade into next section */}
-        <div className="absolute inset-0 bg-gradient-to-t from-toskana-cream via-transparent to-transparent" />
+        {/* Dark left-to-right gradient: Text sits on dark side, image breathes on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-toskana-ink/85 via-toskana-ink/55 to-toskana-ink/15" />
+        {/* Top vignette for nav + logo */}
+        <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-toskana-ink/80 via-toskana-ink/25 to-transparent" />
+        {/* Bottom fade to next section + bottom darkening */}
+        <div className="absolute inset-0 bg-gradient-to-t from-toskana-ink/85 via-toskana-ink/10 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-toskana-cream to-transparent" />
       </div>
 
-      {/* Decorative blob */}
-      <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-toskana-honey/20 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-toskana-terracotta/30 blur-3xl pointer-events-none" />
+      {/* Decorative warm glows */}
+      <div className="absolute top-20 right-10 w-[500px] h-[500px] rounded-full bg-toskana-honey/20 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 left-0 w-[400px] h-[400px] rounded-full bg-toskana-terracotta/25 blur-3xl pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative h-full container mx-auto px-6 lg:px-12 flex flex-col justify-end pb-32 lg:pb-40">
+      {/* Content - vertikal zentriert, mehr Top-Padding für Logo-Freiraum */}
+      <div className="relative flex-1 container mx-auto px-6 lg:px-12 flex items-center pt-32 lg:pt-40 pb-32">
         <div
-          className="max-w-4xl"
-          style={{ transform: `translateY(${-scrollY * 0.15}px)`, opacity: 1 - scrollY / 600 }}
+          className="max-w-3xl"
+          style={{
+            transform: `translateY(${-scrollY * 0.12}px)`,
+            opacity: Math.max(0, 1 - scrollY / 700),
+          }}
         >
-          <h1 className="text-toskana-cream text-shadow-warm font-[family-name:var(--font-display)] text-[clamp(3rem,8vw,7.5rem)] leading-[0.95] mb-6">
-            Das kleine
-            <br />
-            <span className="italic text-toskana-honey">Urlaubsparadies</span>
-            <br />
+          <h1 className="text-toskana-cream text-shadow-warm font-[family-name:var(--font-display)] text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.02] mb-8 text-balance">
+            Das kleine{" "}
+            <span className="italic text-toskana-honey">Urlaubsparadies</span>{" "}
             direkt vor Ihrer Haustüre.
           </h1>
 
-          <p className="text-toskana-cream/90 text-shadow-warm text-xl lg:text-2xl max-w-2xl font-[family-name:var(--font-serif)] italic mb-12 text-pretty">
+          <p className="text-toskana-cream/95 text-shadow-warm text-lg lg:text-xl max-w-xl font-[family-name:var(--font-serif)] italic mb-10 text-pretty">
             Mediterrane Atmosphäre, hausgemachte Torten, frische Hofprodukte –
             mitten im Kraichgau, fast wie in der echten Toskana.
           </p>
@@ -60,14 +68,14 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#cafe"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-toskana-cream text-toskana-bark font-semibold hover:bg-toskana-honey transition-all hover:shadow-2xl hover:shadow-toskana-honey/40 hover:-translate-y-1"
+              className="group inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-toskana-cream text-toskana-bark font-semibold hover:bg-toskana-honey transition-all hover:shadow-2xl hover:shadow-toskana-honey/40 hover:-translate-y-1"
             >
               Unser Café entdecken
               <ChevronDown className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
             </a>
             <a
               href="#kontakt"
-              className="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-toskana-cream/10 backdrop-blur-md border border-toskana-cream/30 text-toskana-cream font-semibold hover:bg-toskana-cream/20 transition-all"
+              className="group inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-toskana-cream/10 backdrop-blur-md border border-toskana-cream/40 text-toskana-cream font-semibold hover:bg-toskana-cream/20 transition-all"
             >
               <MapPin className="w-5 h-5" />
               Anfahrt & Karte
@@ -77,12 +85,14 @@ export function Hero() {
       </div>
 
       {/* Bottom Info Bar */}
-      <div className="absolute bottom-0 inset-x-0 backdrop-blur-md bg-toskana-cream/85 border-t border-toskana-honey/30">
+      <div className="relative backdrop-blur-md bg-toskana-cream/90 border-t border-toskana-honey/30">
         <div className="container mx-auto px-6 lg:px-12 py-5 flex flex-col md:flex-row md:items-center gap-4 md:gap-10">
           <div className="flex items-center gap-3">
             <Clock className="w-5 h-5 text-toskana-terracotta" />
             <div>
-              <p className="text-[0.7rem] uppercase tracking-widest text-toskana-bark/60">Heute</p>
+              <p className="text-[0.7rem] uppercase tracking-widest text-toskana-bark/60">
+                Heute
+              </p>
               <p className="text-sm font-semibold text-toskana-bark">
                 <TodayOpening />
               </p>
@@ -92,8 +102,12 @@ export function Hero() {
           <div className="flex items-center gap-3">
             <MapPin className="w-5 h-5 text-toskana-terracotta" />
             <div>
-              <p className="text-[0.7rem] uppercase tracking-widest text-toskana-bark/60">Adresse</p>
-              <p className="text-sm font-semibold text-toskana-bark">Schleifweghöfe 1/1 · 75050 Gemmingen</p>
+              <p className="text-[0.7rem] uppercase tracking-widest text-toskana-bark/60">
+                Adresse
+              </p>
+              <p className="text-sm font-semibold text-toskana-bark">
+                Schleifweghöfe 1/1 · 75050 Gemmingen
+              </p>
             </div>
           </div>
           <div className="hidden md:block h-10 w-px bg-toskana-honey/30" />
@@ -102,13 +116,6 @@ export function Hero() {
               Freitag · Marktstand Leingarten 7:30 – 18:00
             </span>
           </div>
-        </div>
-      </div>
-
-      {/* Floating Scroll Indicator */}
-      <div className="absolute bottom-32 left-1/2 -translate-x-1/2 hidden lg:block">
-        <div className="animate-float text-toskana-cream/70">
-          <ChevronDown className="w-6 h-6" />
         </div>
       </div>
     </section>
