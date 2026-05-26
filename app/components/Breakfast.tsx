@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { img } from "../lib/images";
 
 const variants = [
   {
@@ -53,8 +54,8 @@ export function Breakfast() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=2400&q=80"
-          alt="Toskana Sonnenaufgang über Hügeln"
+          src={img.galerie.gartenYucca}
+          alt="Bauerngarten mit Yucca und Lavendel"
           fill
           className="object-cover"
           sizes="100vw"

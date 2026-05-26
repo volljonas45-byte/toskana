@@ -2,17 +2,18 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { img } from "../lib/images";
 
 const images = [
-  { src: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=85", alt: "Toskana Hügel mit Zypressen", h: "row-span-2" },
-  { src: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85", alt: "Hausgemachte Torten" },
-  { src: "https://images.unsplash.com/photo-1559496417-e7f25cb247f3?auto=format&fit=crop&w=900&q=85", alt: "Mediterranes Café Interior" },
-  { src: "https://images.unsplash.com/photo-1551649001-7a2482d98d05?auto=format&fit=crop&w=900&q=85", alt: "Frische Eier" },
-  { src: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=85", alt: "Wochenmarktstand", h: "row-span-2" },
-  { src: "https://images.unsplash.com/photo-1597528380179-2c7f87fd3ec4?auto=format&fit=crop&w=900&q=85", alt: "Selbstgemachte Marmelade" },
-  { src: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85", alt: "Frisches Gemüse" },
-  { src: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1200&q=85", alt: "Bauerngarten mit Lavendel" },
-  { src: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&w=900&q=85", alt: "Piaggio Ape gelb" },
+  { src: img.hero, alt: "Café Toskana – Frontansicht mit Piaggio Ape", h: "row-span-2" },
+  { src: img.cafe.terrasse, alt: "Terrasse mit Sonnenschirmen und Bauerngarten" },
+  { src: img.cafe.innen, alt: "Café-Innenraum mit Korbsesseln" },
+  { src: img.hofladen.inhaberin, alt: "Adelheid Schukraft auf der Café-Terrasse", h: "row-span-2" },
+  { src: img.galerie.gartenYucca, alt: "Bauerngarten mit Yucca und Lavendel" },
+  { src: img.torten.baeckerin, alt: "Unsere Tortenbäckerin im Café" },
+  { src: img.galerie.hofFrontal, alt: "Hof Toskana in der Abendsonne" },
+  { src: img.galerie.terrasseTische, alt: "Terrasse mit Sonnenschirmen und Steingarten" },
+  { src: img.piaggio.apeVorCafe, alt: "Der gelbe Piaggio Ape vor dem Café" },
 ];
 
 export function Gallery() {
@@ -33,25 +34,25 @@ export function Gallery() {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 auto-rows-[200px] lg:auto-rows-[260px] gap-3 lg:gap-4">
-          {images.map((img, i) => (
+          {images.map((image, i) => (
             <motion.div
-              key={img.src}
+              key={image.src + i}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: (i % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className={`relative overflow-hidden rounded-2xl lg:rounded-3xl group cursor-pointer ${img.h ?? ""}`}
+              className={`relative overflow-hidden rounded-2xl lg:rounded-3xl group cursor-pointer ${image.h ?? ""}`}
             >
               <Image
-                src={img.src}
-                alt={img.alt}
+                src={image.src}
+                alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-[1.5s] group-hover:scale-110"
                 sizes="(max-width: 1024px) 50vw, 25vw"
               />
               <div className="absolute inset-0 bg-toskana-ink/0 group-hover:bg-toskana-ink/40 transition-colors duration-500" />
               <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                <p className="text-toskana-cream text-sm font-medium">{img.alt}</p>
+                <p className="text-toskana-cream text-sm font-medium">{image.alt}</p>
               </div>
             </motion.div>
           ))}

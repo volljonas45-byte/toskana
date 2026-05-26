@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Calendar, Clock, MapPin } from "lucide-react";
+import { img } from "../lib/images";
 
 export function Wochenmarkt() {
   return (
@@ -57,8 +58,8 @@ export function Wochenmarkt() {
           >
             <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-2xl shadow-toskana-bark/20">
               <Image
-                src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1400&q=85"
-                alt="Wochenmarkt-Stand mit frischen Produkten"
+                src={img.piaggio.apeVorCafe}
+                alt="TOSKANA Piaggio Ape vor dem Café – am Markttag freitags in Leingarten"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 60vw"

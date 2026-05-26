@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronDown, MapPin, Clock } from "lucide-react";
+import { img } from "../lib/images";
 
 export function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -18,8 +19,8 @@ export function Hero() {
       {/* Background Image - Toskana-Landschaft */}
       <div className="absolute inset-0" style={{ transform: `translateY(${scrollY * 0.4}px) scale(${1 + scrollY * 0.0003})` }}>
         <Image
-          src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=2400&q=85"
-          alt="Toskana Landschaft mit Zypressen und Sonnenuntergang"
+          src={img.cafe.terrasse}
+          alt="Café Toskana Terrasse mit Sonnenschirmen und Bauerngarten"
           fill
           priority
           className="object-cover"

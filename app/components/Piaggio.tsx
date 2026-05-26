@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { img } from "../lib/images";
 
 export function Piaggio() {
   return (
@@ -71,8 +72,8 @@ export function Piaggio() {
             <div className="relative aspect-square rounded-full bg-gradient-to-br from-toskana-cream/20 to-toskana-cream/5 backdrop-blur-sm border border-toskana-cream/20 p-8">
               <div className="relative w-full h-full rounded-full overflow-hidden ring-8 ring-toskana-cream/10">
                 <Image
-                  src="https://images.unsplash.com/photo-1531259683007-016a7b628fc3?auto=format&fit=crop&w=1200&q=85"
-                  alt="Gelber Piaggio Ape vor toskanischem Haus"
+                  src={img.piaggio.apeVorCafe}
+                  alt="Der gelbe TOSKANA Piaggio Ape 50 vor dem Café"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

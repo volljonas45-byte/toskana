@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Wine, Cake, Coffee, Sandwich } from "lucide-react";
+import { img } from "../lib/images";
 
 const offerings = [
   { icon: Coffee, label: "Hagen-Kaffeespezialitäten" },
@@ -27,8 +28,8 @@ export function Cafe() {
             {/* Main image */}
             <div className="absolute top-0 left-0 w-[78%] h-[68%] rounded-3xl overflow-hidden shadow-2xl shadow-toskana-bark/20">
               <Image
-                src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?auto=format&fit=crop&w=1200&q=85"
-                alt="Mediterranes Café mit Korbsesseln"
+                src={img.galerie.terrasseTische}
+                alt="Café Toskana Terrasse mit Sonnenschirmen"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -37,8 +38,8 @@ export function Cafe() {
             {/* Overlap image */}
             <div className="absolute bottom-0 right-0 w-[62%] h-[52%] rounded-3xl overflow-hidden shadow-2xl shadow-toskana-bark/30 ring-8 ring-toskana-cream">
               <Image
-                src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85"
-                alt="Hausgemachte Torten"
+                src={img.cafe.innen}
+                alt="Café Innenraum mit Korbsesseln"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 30vw"

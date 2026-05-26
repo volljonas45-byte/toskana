@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowUpRight, Coffee, ShoppingBasket, Sun } from "lucide-react";
 import { motion } from "framer-motion";
+import { img } from "../lib/images";
 
 const pillars = [
   {
@@ -12,8 +13,8 @@ const pillars = [
     title: "Bauernhofcafé",
     sub: "Korbsessel, Kuchen & Kaffee",
     text: "Mediterrane Atmosphäre, hausgemachte Torten und Hagen-Kaffeespezialitäten – im Sommer auf unserer Terrasse, fast wie in der echten Toskana.",
-    image: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80",
-    alt: "Mediterranes Café mit warmem Licht",
+    image: img.cafe.innen,
+    alt: "Café Innenraum mit Korbsesseln",
     badge: "Mi · Fr · Sa · So",
   },
   {
@@ -23,8 +24,8 @@ const pillars = [
     title: "Hofladen",
     sub: "Alles Gute aus der Natur",
     text: "Tagesfrische Eier, hausmacher Wurst, selbstgemachte Marmelade, Honig, Wein – auserwählte und selbsterzeugte Produkte zum in Ruhe einkaufen.",
-    image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=80",
-    alt: "Frische Hofprodukte im Korb",
+    image: img.galerie.gartenYucca,
+    alt: "Bauerngarten mit Yucca und Lavendel",
     badge: "Direkt vom Hof",
   },
   {
@@ -34,8 +35,8 @@ const pillars = [
     title: "Wochenmarkt",
     sub: "Freitag ist Markttag",
     text: "Jeden Freitag von 7:30 bis 18:00 Uhr finden Sie uns mit unserem Stand in Leingarten beim alten Rathaus.",
-    image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1200&q=80",
-    alt: "Wochenmarkt-Stand",
+    image: img.piaggio.apeVorCafe,
+    alt: "TOSKANA Piaggio Ape vor dem Café",
     badge: "Freitag 7:30 – 18:00",
   },
 ];
