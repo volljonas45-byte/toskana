@@ -1,24 +1,27 @@
-// Zentrale Bild-Pfade. basePath wird von Next.js automatisch vorangestellt.
-// next/image fügt im prod-build /toskana/ vor den Pfad.
+// basePath muss manuell vor next/image src gesetzt werden.
+// Quelle: next.js docs/01-app/.../basePath.md → "Images"
+const basePath = process.env.NODE_ENV === "production" ? "/toskana" : "";
+const p = (path: string) => `${basePath}${path}`;
+
 export const img = {
-  logo: "/images/logo/toskana-logo.png",
-  hero: "/images/hero/hof-uebersicht.jpg",
+  logo: p("/images/logo/toskana-logo.png"),
+  hero: p("/images/hero/hof-uebersicht.jpg"),
   cafe: {
-    terrasse: "/images/cafe/terrasse-sonnenschirme.webp",
-    innen: "/images/cafe/innen-korbsessel.jpg",
+    terrasse: p("/images/cafe/terrasse-sonnenschirme.webp"),
+    innen: p("/images/cafe/innen-korbsessel.jpg"),
   },
   hofladen: {
-    inhaberin: "/images/hofladen/inhaberin-terrasse.jpg",
+    inhaberin: p("/images/hofladen/inhaberin-terrasse.jpg"),
   },
   torten: {
-    baeckerin: "/images/torten/tortenbaeckerin.jpg",
+    baeckerin: p("/images/torten/tortenbaeckerin.jpg"),
   },
   piaggio: {
-    apeVorCafe: "/images/piaggio/ape-vor-cafe.jpg",
+    apeVorCafe: p("/images/piaggio/ape-vor-cafe.jpg"),
   },
   galerie: {
-    hofFrontal: "/images/galerie/hof-frontal.jpg",
-    gartenYucca: "/images/galerie/garten-yucca.jpg",
-    terrasseTische: "/images/galerie/terrasse-tische.jpg",
+    hofFrontal: p("/images/galerie/hof-frontal.jpg"),
+    gartenYucca: p("/images/galerie/garten-yucca.jpg"),
+    terrasseTische: p("/images/galerie/terrasse-tische.jpg"),
   },
 } as const;
