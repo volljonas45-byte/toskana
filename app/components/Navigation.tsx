@@ -34,8 +34,15 @@ export function Navigation() {
         }`}
       >
         <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
-          <a href="#top" className="z-10">
-            <Logo variant={scrolled ? "dark" : "light"} />
+          <a
+            href="#top"
+            className={`z-10 inline-flex items-center rounded-2xl transition-all duration-500 ${
+              scrolled
+                ? "px-3 py-1.5 bg-transparent"
+                : "px-4 py-2.5 bg-toskana-cream/95 backdrop-blur-md shadow-[0_8px_30px_rgba(42,26,14,0.25)] ring-1 ring-toskana-cream/40"
+            }`}
+          >
+            <Logo variant="dark" />
           </a>
 
           <nav className="hidden lg:flex items-center gap-1">
