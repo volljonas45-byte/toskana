@@ -27,7 +27,7 @@ export function Hero() {
           sizes="100vw"
         />
         {/* Top vignette - dunkler oben für Logo+Nav-Lesbarkeit */}
-        <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-toskana-ink/75 via-toskana-ink/30 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-toskana-ink/85 via-toskana-ink/45 to-transparent" />
         {/* Base overall darkening for hero text */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-toskana-bark/25 to-toskana-ink/70" />
         {/* Bottom fade into next section */}
